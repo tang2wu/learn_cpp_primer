@@ -1,22 +1,21 @@
 #include <iostream>
 
 int main () {
-    std::cout << "Hello Makefile World";
-    std::cout << "enter two number(int type):";
-    int value0, value1 = 0;
-    std::cin >> value0 >> value1;
-    std::cout << "value0:" << value0 << ", value1:" << value1 ; 
-    int sum = value0 + value1;
-    std::cout << "sum of the two number is " << sum ;
-    std::cout << "The product of " << value0 << " and " << value1 << " is " << value0 * value1;
-    std::cout << std::endl;
-    /* 正常注释*/
-    // an error when return value is not 0
+    
+    std::cout << "We will get sum from a to b:" << std::endl;
+    int a, b = 0;
+    std::cin >> a >> b;
+    std::cout << "a:" << a << ", b:" << b << std::endl;
+    // useed to store the sum of the addends
+    int sum = 0;
+    while ( a <= b )
+    {
+        sum += a;
+        a++; 
+    }
+    std::cout << "the sum of a " << a << " and " << " b:" << b << " is " << sum << std::endl;
 
-    std::cout << "/*";
-    std::cout << "*/";
-    std::cout << /* "*/" */ ";
-    std::cout << /* "*/" /* "/*" */;
-
+    
+    
     return 0;
 }
