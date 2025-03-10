@@ -1,21 +1,26 @@
 #include <iostream>
 
-int main () {
-    
-    std::cout << "We will get sum from a to b:" << std::endl;
-    int a, b = 0;
-    std::cin >> a >> b;
-    std::cout << "a:" << a << ", b:" << b << std::endl;
-    // useed to store the sum of the addends
-    int sum = 0;
-    while ( a <= b )
-    {
-        sum += a;
-        a++; 
+int main()
+{
+    // 统计连续出现的数字的次数
+    int curVal = 0;
+    if (std::cin >> curVal) {
+        int count = 1;
+        int val = 0;
+        while (std::cin >> val) {
+            if (curVal == val) {
+                count++;
+            } else {
+                std::cout << "val:" << curVal << ", count:" << count << std::endl;
+                count = 1;
+                curVal = val;
+            }
+        }
+        if (count > 1) {
+            std::cout << "val:" << curVal << ", count:" << count << std::endl;
+        }
+    } else {
+        std::cout << "you do not enter anything" << std::endl;
     }
-    std::cout << "the sum of a " << a << " and " << " b:" << b << " is " << sum << std::endl;
-
-    
-    
     return 0;
 }
