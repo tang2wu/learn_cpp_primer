@@ -3,24 +3,26 @@
 int main()
 {
     // 统计连续出现的数字的次数
-    int curVal = 0;
-    if (std::cin >> curVal) {
+    std::cout << "You can enter number(ctrl + D finish):" << std::endl;
+    // first time cin
+    int current_num = 0;
+    if (std::cin >> current_num) {
         int count = 1;
-        int val = 0;
-        while (std::cin >> val) {
-            if (curVal == val) {
+        int next_num = 0;
+        while (std::cin >> next_num) {
+            if (current_num == next_num) {
                 count++;
             } else {
-                std::cout << "val:" << curVal << ", count:" << count << std::endl;
+                std::cout << "The num:" << current_num << ", count is:" << count << std::endl;
                 count = 1;
-                curVal = val;
+                current_num = next_num;
             }
         }
-        if (count > 1) {
-            std::cout << "val:" << curVal << ", count:" << count << std::endl;
-        }
+        // print last num
+        std::cout << "The num:" << current_num << ", count is:" << count << std::endl;
+        
     } else {
-        std::cout << "you do not enter anything" << std::endl;
+        std::cout << "you enter nothing , pls check." << std::endl;
     }
     return 0;
 }
